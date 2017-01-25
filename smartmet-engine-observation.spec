@@ -3,32 +3,32 @@
 %define SPECNAME smartmet-engine-%{DIRNAME}
 Summary: SmartMet Observation Engine
 Name: %{SPECNAME}
-Version: 16.11.30
-Release: 2%{?dist}.fmi
+Version: 17.1.4
+Release: 1%{?dist}.fmi
 License: FMI
 Group: SmartMet/Engines
-URL: http://www.weatherproof.fi
+URL: https://github.com/fmidev/smartmet-engine-observation
 Source0: %{name}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libconfig-devel
 BuildRequires: oracle-instantclient11.2-devel
 BuildRequires: boost-devel
 Requires: libconfig
-BuildRequires: smartmet-library-spine-devel >= 16.11.29
-BuildRequires: smartmet-engine-geonames-devel >= 16.11.30
+BuildRequires: smartmet-library-spine-devel >= 17.1.4
+BuildRequires: smartmet-engine-geonames-devel >= 17.1.4
 BuildRequires: mysql++-devel >= 3.1.0
 BuildRequires: libspatialite-devel >= 4.1.1
 BuildRequires: sqlite-devel >= 3.11.0
 BuildRequires: soci-devel >= 3.2.3
 BuildRequires: soci-sqlite3-devel >= 3.2.3
-BuildRequires: libsmartmet-locus-devel >= 16.6.7
-BuildRequires: libsmartmet-macgyver-devel >= 16.9.30
+BuildRequires: smartmet-library-locus-devel >= 16.12.20
+BuildRequires: smartmet-library-macgyver-devel >= 16.12.20
 BuildRequires: jssatomic
-Requires: smartmet-server >= 16.11.30
-Requires: smartmet-engine-geonames >= 16.11.30
-Requires: smartmet-library-spine >= 16.11.29
-Requires: libsmartmet-locus >= 16.6.7
-Requires: libsmartmet-macgyver >= 16.9.30
+Requires: smartmet-server >= 17.1.4
+Requires: smartmet-engine-geonames >= 17.1.4
+Requires: smartmet-library-spine >= 17.1.4
+Requires: smartmet-library-locus >= 16.12.20
+Requires: smartmet-library-macgyver >= 16.12.20
 Requires: oracle-instantclient11.2-basic
 Requires: libatomic
 Requires: unixODBC
@@ -102,6 +102,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/smartmet/engines/%{DIRNAME}
 
 %changelog
+* Wed Jan  4 2017 Mika Heiskanen <mika.heiskanen@fmi.fi> - 17.1.4-1.fmi
+- Changed to use renamed SmartMet base libraries
+
 * Wed Nov 30 2016 Mika Heiskanen <mika.heiskanen@fmi.fi> - 16.11.30-2.fmi
 - Safer location database initialization
 

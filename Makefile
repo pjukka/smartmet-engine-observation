@@ -90,8 +90,8 @@ LIBS = -L$(libdir) \
         -lmysqlpp \
         -L$(libdir)/mysql -lmysqlclient_r -lz \
         -lsmartmet-spine \
-        -lsmartmet_macgyver \
-        -lsmartmet_locus \
+        -lsmartmet-macgyver \
+        -lsmartmet-locus \
         -lboost_thread \
         -lboost_iostreams \
         -lboost_date_time \
@@ -176,7 +176,6 @@ objdir:
 rpm: clean
 	@if [ -e $(SPEC).spec ]; \
 	then \
-	  smartspecupdate $(SPEC).spec ; \
 	  mkdir -p $(rpmsourcedir) ; \
 	  tar -C ../../ -cf $(rpmsourcedir)/$(SPEC).tar engines/$(SUBNAME) ; \
 	  gzip -f $(rpmsourcedir)/$(SPEC).tar ; \

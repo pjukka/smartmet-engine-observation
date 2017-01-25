@@ -29,9 +29,9 @@ INCLUDES = \
 
 LIBS = \
 	-lsmartmet-spine \
-	-lsmartmet_macgyver \
-	-lsmartmet_locus \
-	-lsmartmet_newbase \
+	-lsmartmet-macgyver \
+	-lsmartmet-locus \
+	-lsmartmet-newbase \
 	`pkg-config --libs libconfig++` \
 	-lpqxx \
 	-lboost_date_time \
